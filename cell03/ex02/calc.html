@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body{
+            height: 100vh;
+            display: grid;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+    </style>
+    <script>
+        function calculate() {
+            let left = document.getElementById('left').value;
+            let operator = document.getElementById('operator').value;
+            let right = document.getElementById('right').value;
+            
+            if (isNaN(left) || !isNaN(right)) {
+                alert('Error :(');
+                return;
+            }
+            
+            left = parseInt(left);
+            right = parseInt(right);
+            let result;
+            
+            if ((operator === '/' || operator === '%') && right === 0) {
+                alert("It's over 9000!");
+                return;
+            }
+            
+            switch (operator) {
+                case '+': result = left + right; break;
+                case '-': result = left - right; break;
+                case '*': result = left * right; break;
+                case '/': result = left / right; break;
+                case '%': result = left % right; break;
+            }
+            
+            alert('Result: ' + result);
+            console.log('Result:', result);
+        }
+        
+        setInterval(() => {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="left" placeholder="Enter a number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right" placeholder="Enter a number">
+        <input type="submit" value="Try me!" onclick="calculate()">
+    </div>
+</body>
+</html>
