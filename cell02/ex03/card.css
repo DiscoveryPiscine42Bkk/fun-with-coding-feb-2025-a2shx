@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: inherit;
+}
+html{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+body{
+    display: grid;
+    height: 100vh;
+    align-items: center;
+}
+.card{
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "profile-pic"
+    "username"
+    "description-1"
+    "description-2"
+    "social"
+    "contactbtn";
+    justify-items: center;
+    align-items: center;
+    width: 500px;
+    height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);;
+}
+.title{
+    grid-area: title;
+    font-size: 2rem;
+    margin-top: 15px;
+}
+.profile-pic{
+    grid-area: profile-pic;
+}
+.profile-pic img{
+    width: 100%;
+}
+.username{
+    grid-area: username;
+    font-size: 1.5rem;
+}
+.description-1{
+    color: gray;
+    grid-area: description-1;
+}
+.description-2{
+    grid-area: description-2;
+}
+.social{
+    font-size: 1.5rem;
+    grid-area: social;
+}
+.contact{
+    color: white;
+    margin-top: 20px;
+    padding-top: 25px;
+    text-align: center;
+    grid-area: contactbtn;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    text-decoration: none;
+}
+.contact:hover {
+    opacity: 0.7;
+    transition-duration: 0.3s;
+}
