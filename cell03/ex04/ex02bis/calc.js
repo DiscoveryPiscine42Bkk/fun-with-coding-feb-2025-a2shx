@@ -8,6 +8,7 @@ $(document).ready(function() {
 
         if (!integerRegex.test(left) || !integerRegex.test(right)) {
             alert('Error :(');  
+            console.log('Error :(');
             return;  
         }
 
@@ -16,6 +17,7 @@ $(document).ready(function() {
 
         if ((operator === '/' || operator === '%') && right === 0) {
             alert("It’s over 9000!");
+            console.log('It’s over 9000!');
             return;
         }
 
