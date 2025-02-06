@@ -21,7 +21,7 @@
             let operator = document.getElementById('operator').value;
             let right = document.getElementById('right').value;
             
-            if (isNaN(left) || !isNaN(right)) {
+            if (isNaN(left) || isNaN(right)) {
                 alert('Error :(');
                 return;
             }
